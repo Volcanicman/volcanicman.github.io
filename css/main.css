@@ -121,11 +121,24 @@
 /*	background:rgba(28,2,2, 0.74)*/
 /*}*/
 .themify_builder_7_row.module_row_4.module_row> div > .builder_row_cover {
-	background:rgba(28,2,2, 0.74)
+	background: var(--donate-bg-overlay);
 }
 
 .themify_builder .text-7-4-0-1.module-text { column-count: 1;  } 
 .themify_builder .text-7-sub_row_4-0-2-1-0.module-text { column-count: 1;  }
+
+/* Page background — keeps gutters and any unstyled area black */
+body,
+#pagewrap {
+	background-color: var(--page-bg-color);
+	color: var(--page-text-color);
+}
+
+/* Video section */
+.tb_section-video {
+	background-color: var(--video-bg-color);
+	color: var(--video-text-color);
+}
 
 .tb_section-about {
 	background: var(--about-bg-color);
