@@ -120,9 +120,6 @@
 /*.themify_builder_7_row.module_row_4.module_row>.builder_row_cover {*/
 /*	background:rgba(28,2,2, 0.74)*/
 /*}*/
-.themify_builder_7_row.module_row_4.module_row> div > .builder_row_cover {
-	background: var(--donate-bg-overlay);
-}
 
 .themify_builder .text-7-4-0-1.module-text { column-count: 1;  } 
 .themify_builder .text-7-sub_row_4-0-2-1-0.module-text { column-count: 1;  }

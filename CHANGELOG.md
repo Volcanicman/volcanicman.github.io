@@ -20,15 +20,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   but previously unused.
 - The page itself (`body`, `#pagewrap`) is now black, so gutters and any
   unstyled area match the sections instead of showing through white.
-- The overlay on the Donate section is now a neutral black tint rather than the
-  previous red-tinted `rgba(28, 2, 2, .74)`, so the section reads as true black.
+- Removed a CSS rule for the Donate section's overlay that could never match the
+  page. It selected `> div > .builder_row_cover`, but that element is a direct
+  child of the row, not a grandchild. It had been carrying a red tint
+  (`rgba(28, 2, 2, .74)`) that consequently never rendered. The Donate section
+  reads as true black and always did, via its own `background-color`.
 
 ### Added
 
 - New colour knobs in `css/colors.css`: `--page-bg-color`, `--page-text-color`,
-  `--video-bg-color`, `--video-text-color`, and `--donate-bg-overlay`. As with
-  the existing variables, edit these to recolour a section without touching
-  `css/main.css`. Every variable in `css/colors.css` is now actually consumed.
+  `--video-bg-color` and `--video-text-color`. As with the existing variables,
+  edit these to recolour a section without touching `css/main.css`.
 
 ### Notes
 
