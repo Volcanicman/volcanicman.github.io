@@ -12,8 +12,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   Subscribe sections changed from grey (`rgb(174, 174, 174)`) and brown
   (`rgb(86, 67, 67)`); the Video section, which previously had no background of
   its own and fell through to the browser default, is now styled explicitly.
-- About-section body text is now white so it stays readable on the new
-  background.
+- All section text is now white, including headings and links. Previously the
+  theme skin coloured every `h2` salmon (`#ff887b`) and every link salmon
+  (`#e07368`) in the About, Video, Donate and Subscribe sections; only the Home
+  and Contact sections overrode it. Contact-section links were a pale cream
+  (`#fcffcc`) and are now white via `--contact-text-color`, which was defined
+  but previously unused.
 - The page itself (`body`, `#pagewrap`) is now black, so gutters and any
   unstyled area match the sections instead of showing through white.
 - The overlay on the Donate section is now a neutral black tint rather than the
@@ -24,7 +28,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - New colour knobs in `css/colors.css`: `--page-bg-color`, `--page-text-color`,
   `--video-bg-color`, `--video-text-color`, and `--donate-bg-overlay`. As with
   the existing variables, edit these to recolour a section without touching
-  `css/main.css`.
+  `css/main.css`. Every variable in `css/colors.css` is now actually consumed.
 
 ### Notes
 
