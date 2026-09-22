@@ -3,6 +3,7 @@
   "private": true,
   "description": "Static site for Volcanic International",
   "scripts": {
+    "start": "node scripts/serve.js",
     "test": "playwright test"
   },
   "devDependencies": {

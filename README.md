@@ -4,11 +4,25 @@
 This site can load without a server! Clone this repository to your computer &
 just open the [index file](index.html) in a web browser!
 
+## Preview
+
+Node 18 or newer:
+
+```
+npm install
+npm start
+```
+
+That serves this folder at <http://127.0.0.1:3000>. `PORT` and `HOST` change
+the address (`PORT=8080 npm start`). Reloads pick up edits: responses send
+`Cache-Control: no-cache` and an `ETag`, so the browser revalidates instead of
+holding a stale copy. Opening `index.html` directly still works.
+
 ## Smoke tests
 
-The homepage smoke tests need Node 18 or newer. They serve this folder at
-`http://127.0.0.1:4173` for the test run. That does not replace opening
-`index.html` directly.
+The homepage smoke tests need Node 18 or newer. They use the same server as
+`npm start`, on `http://127.0.0.1:4173`, for the test run. That does not
+replace opening `index.html` directly.
 
 ```
 npm install

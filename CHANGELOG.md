@@ -28,9 +28,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Added
 
+- `npm start` serves this folder with Node (`scripts/serve.js`) at
+  `http://127.0.0.1:3000`. No extra package. `PORT` and `HOST` override the
+  address. Text and image responses send `Cache-Control: no-cache` plus an
+  `ETag`, so a reload revalidates instead of reusing a stale file. Directory
+  URLs such as `/feed/` resolve to `index.html` or `index.xml`.
 - `npm test` smoke-checks the homepage with Playwright and smky: the document
   title, the five nav labels, Home / About / Contact / Donate / Sermons copy,
-  the contact fields, and the PayPal form. It serves this folder at
+  the contact fields, and the PayPal form. It uses the same server on
   `http://127.0.0.1:4173` for the run. Opening `index.html` directly is unchanged.
 - A **Spiritual Maintenance** entry in the Subscribe section: the book cover plus
   a link to its Amazon listing. Defined in `templates/subscribe5.md.js`, with the
@@ -48,6 +53,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Fixed
 
+- The homepage no longer requests `media-queries.css`, `themify.script.js`, or
+  `wp-emoji-release.min.js`. Those files are not in this export. The emoji
+  probe also ran a canvas test on every view before asking for the missing
+  script. Native emoji still render.
 - `logo()` in `js/functions/logo.js` defaulted to `vector('logo')`, resolving to
   `graphics/logo.svg`, which does not exist — only `graphics/logo.png` does. The
   default is now the raster path. Nothing called `logo()`, so this was a trap for
