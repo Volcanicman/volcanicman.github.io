@@ -4,8 +4,9 @@
 *Zone.Identifier
 .DS_Store
 
-# Anchor local state (worktrees, caches) — never commit
+# Anchor local state (worktrees, caches, fleet registry) — never commit
 var/
+.anchor/scripts/endpoints.yaml
 
 node_modules/
 test-results/
