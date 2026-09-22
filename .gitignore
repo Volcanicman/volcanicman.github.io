@@ -3,3 +3,6 @@
 
 *Zone.Identifier
 .DS_Store
+
+# Anchor local state (worktrees, caches) — never commit
+var/
