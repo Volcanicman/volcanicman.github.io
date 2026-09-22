@@ -1,5 +1,21 @@
 /* Begin main CSS Styling. Best to leave everything below as-is. */
 
+/* Cover divs are empty, so they collapse and their background never shows.
+   Donate and Subscribe covers have no background and stay invisible. */
+.themify_builder_row {
+	position: relative;
+}
+.builder_row_cover {
+	position: absolute;
+	inset: 0;
+	z-index: 0;
+	pointer-events: none;
+}
+.themify_builder_row > .row_inner_wrapper {
+	position: relative;
+	z-index: 1;
+}
+
 /* .themify_builder_7_row.module_row_0 Style */
 .themify_builder_7_row.module_row_0.module_row {
 	background-image: var(--home-bg-image);
@@ -28,9 +44,6 @@
 	color: #ffffff
 }
 .themify_builder_7_row.module_row_0.module_row>.builder_row_cover {
-	background: var(--home-bg-overlay);
-}
-.themify_builder_7_row.module_row_0.module_row> div > .builder_row_cover {
 	background: var(--home-bg-overlay);
 }
 
@@ -91,9 +104,6 @@
 	color: #ffffff
 }
 .themify_builder_7_row.module_row_3.module_row>.builder_row_cover {
-	background:rgba(0,0,0, 0.58)
-}
-.themify_builder_7_row.module_row_3.module_row> div > .builder_row_cover {
 	background:rgba(0,0,0, 0.58)
 }
 
