@@ -70,7 +70,7 @@
 	padding-bottom : 6%
 }
 .themify_builder_7_row.module_row_3 a {
-	color: #fcffcc
+	color: var(--contact-text-color);
 }
 .themify_builder_7_row.module_row_3.module_row h1 {
 	color: #ffffff
@@ -120,12 +120,55 @@
 /*.themify_builder_7_row.module_row_4.module_row>.builder_row_cover {*/
 /*	background:rgba(28,2,2, 0.74)*/
 /*}*/
-.themify_builder_7_row.module_row_4.module_row> div > .builder_row_cover {
-	background:rgba(28,2,2, 0.74)
-}
 
 .themify_builder .text-7-4-0-1.module-text { column-count: 1;  } 
 .themify_builder .text-7-sub_row_4-0-2-1-0.module-text { column-count: 1;  }
+
+/* Headings and links follow each section's own text colour. Without this the
+   theme skin wins and renders them salmon (h2 #ff887b, a #e07368). */
+.tb_section-about h1,
+.tb_section-about h2,
+.tb_section-about h3,
+.tb_section-about h4,
+.tb_section-about h5,
+.tb_section-about h6,
+.tb_section-about a,
+.tb_section-video h1,
+.tb_section-video h2,
+.tb_section-video h3,
+.tb_section-video h4,
+.tb_section-video h5,
+.tb_section-video h6,
+.tb_section-video a,
+.tb_section-donate h1,
+.tb_section-donate h2,
+.tb_section-donate h3,
+.tb_section-donate h4,
+.tb_section-donate h5,
+.tb_section-donate h6,
+.tb_section-donate a,
+.tb_section-subscribe h1,
+.tb_section-subscribe h2,
+.tb_section-subscribe h3,
+.tb_section-subscribe h4,
+.tb_section-subscribe h5,
+.tb_section-subscribe h6,
+.tb_section-subscribe a {
+	color: inherit;
+}
+
+/* Page background — keeps gutters and any unstyled area black */
+body,
+#pagewrap {
+	background-color: var(--page-bg-color);
+	color: var(--page-text-color);
+}
+
+/* Video section */
+.tb_section-video {
+	background-color: var(--video-bg-color);
+	color: var(--video-text-color);
+}
 
 .tb_section-about {
 	background: var(--about-bg-color);
