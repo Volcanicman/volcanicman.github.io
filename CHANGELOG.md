@@ -53,6 +53,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Fixed
 
+- The page head now has a canonical URL on `www.volcanicinternational.org`, a
+  description taken from the About copy, and Open Graph / Twitter card tags
+  pointing at `graphics/share-card.jpg` (1200×630). The empty canonical and
+  shortlink, and the WordPress generator tag, are gone.
 - The homepage no longer requests `media-queries.css`, `themify.script.js`, or
   `wp-emoji-release.min.js`. Those files are not in this export. The emoji
   probe also ran a canvas test on every view before asking for the missing
