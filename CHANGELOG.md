@@ -30,6 +30,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   the existing variables, edit these to recolour a section without touching
   `css/main.css`. Every variable in `css/colors.css` is now actually consumed.
 
+### Fixed
+
+- Icon links in the Subscribe section pointed at `href="0"`, `href="1"`, … instead
+  of their destinations, so all five of them — one under Sermons and four under
+  Podcast — navigated nowhere. `icons()` in `js/functions/icons.js` iterated with
+  `Object.keys(list).forEach(function (name, link))`, where `forEach` supplies the
+  array *index* as the second argument rather than the map's value. It now
+  iterates `Object.entries()`.
+
 ### Notes
 
 - The Home and Contact sections keep their background photographs. Both already
