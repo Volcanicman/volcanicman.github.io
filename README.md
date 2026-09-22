@@ -18,6 +18,7 @@ Each file primarily uses [Markdown](https://www.markdownguide.org/cheat-sheet) s
 * [subscribe2](templates/subscribe2.md.js) (sermons)
 * [subscribe3](templates/subscribe3.md.js) (podcasts)
 * [subscribe4](templates/subscribe4.md.js) (prayer tracks)
+* [subscribe5](templates/subscribe5.md.js) (Spiritual Maintenance book)
 
 To modify the files, log into your GitHub account, navigate to the relevant file in this repository
 & click the Pencil button to the top-right of the file. Once you've made your edits, click the
