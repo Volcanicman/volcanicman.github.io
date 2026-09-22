@@ -60,6 +60,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   description taken from the About copy, and Open Graph / Twitter card tags
   pointing at `graphics/share-card.jpg` (1200×630). The empty canonical and
   shortlink, and the WordPress generator tag, are gone.
+- Section templates now wait until every helper script has loaded or failed.
+  The old check looked at helper names, which are always truthy, so the first
+  helper to finish inserted the templates. A slow load could run About before
+  `photo()` existed and replace the section with a load error.
 - The homepage no longer requests `media-queries.css`, `themify.script.js`, or
   `wp-emoji-release.min.js`. Those files are not in this export. The emoji
   probe also ran a canvas test on every view before asking for the missing
