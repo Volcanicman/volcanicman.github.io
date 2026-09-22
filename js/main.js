@@ -31,18 +31,25 @@ jQuery(window).ready(function() {
         script.setAttribute('data-name', func + '_function');
         document.body.appendChild(script);
         script.onload = function() {
-            functions[func] = true;
-            let isAllFunctionsLoaded = true;
-            Object.keys(functions).forEach(function(loaded) {
-                if (!loaded) {
-                    isAllFunctionsLoaded = false;
-                }
-            });
-            if (isAllFunctionsLoaded) {
-                allFunctionsLoaded();
-            }
+            settleHelper(func);
+        };
+        script.onerror = function() {
+            settleHelper(func);
         };
     });
+
+    function helpersReady() {
+        return Object.keys(functions).every(function(name) {
+            return functions[name];
+        });
+    }
+
+    function settleHelper(func) {
+        functions[func] = true;
+        if (helpersReady()) {
+            allFunctionsLoaded();
+        }
+    }
 
     // Load section Markdown into the index page.
     function allFunctionsLoaded() {
