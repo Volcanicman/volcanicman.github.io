@@ -25,6 +25,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Added
 
+- A **Prayer Tracks** entry in the Subscribe section, linking to Aaron Brewer's
+  artist pages on Spotify and Apple Music. Defined in
+  `templates/subscribe4.md.js`; it mounts on a new `#subscribe4` div in a second
+  sub-row of the Subscribe block, which `js/main.js` picks up automatically.
 - New colour knobs in `css/colors.css`: `--page-bg-color`, `--page-text-color`,
   `--video-bg-color`, `--video-text-color`, and `--donate-bg-overlay`. As with
   the existing variables, edit these to recolour a section without touching
