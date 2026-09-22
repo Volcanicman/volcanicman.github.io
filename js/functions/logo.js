@@ -8,9 +8,10 @@
  *
  * @param useVector
  *   Whether a vector version of the logo in the graphics folder should be used.
- *   Defaults to true.
+ *   Defaults to false, because only graphics/logo.png exists; pass true once a
+ *   graphics/logo.svg is added.
  * @returns {string}
  */
-function logo(useVector = true) {
+function logo(useVector = false) {
     return useVector ? vector('logo') : raster('logo');
 }

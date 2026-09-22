@@ -32,12 +32,25 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Fixed
 
+- `logo()` in `js/functions/logo.js` defaulted to `vector('logo')`, resolving to
+  `graphics/logo.svg`, which does not exist — only `graphics/logo.png` does. The
+  default is now the raster path. Nothing called `logo()`, so this was a trap for
+  the next caller rather than a live break.
+
 - Icon links in the Subscribe section pointed at `href="0"`, `href="1"`, … instead
   of their destinations, so all five of them — one under Sermons and four under
   Podcast — navigated nowhere. `icons()` in `js/functions/icons.js` iterated with
   `Object.keys(list).forEach(function (name, link))`, where `forEach` supplies the
   array *index* as the second argument rather than the map's value. It now
   iterates `Object.entries()`.
+
+### Removed
+
+- The WordPress REST, RSD/XML-RPC and oEmbed discovery `<link>` tags in
+  `index.html`'s `<head>`. This site is a static export served from GitHub Pages,
+  so `wp-json/`, `wp-json/wp/v2/pages/7`, `wp-json/oembed/1.0/embed` and
+  `xmlrpc.php` never existed here. Canonical, shortlink, favicon and generator
+  tags are untouched.
 
 ### Notes
 
