@@ -53,6 +53,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Fixed
 
+- The Video section no longer embeds the Vimeo player, which was showing a
+  player error instead of the film. It now shows the film's poster. The image
+  links to `https://vimeo.com/212780263` and opens in a new tab.
 - The homepage no longer requests `media-queries.css`, `themify.script.js`, or
   `wp-emoji-release.min.js`. Those files are not in this export. The emoji
   probe also ran a canvas test on every view before asking for the missing
