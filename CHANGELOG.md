@@ -64,6 +64,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   The old check looked at helper names, which are always truthy, so the first
   helper to finish inserted the templates. A slow load could run About before
   `photo()` existed and replace the section with a load error.
+- Home and Contact photographs are dimmed by the overlays `css/main.css` already
+  declared. The cover elements had no box, so the veil never painted. Home uses
+  `--home-bg-overlay` (30% black) and Contact uses `rgba(0, 0, 0, .58)`. Donate
+  and Subscribe stay undimmed.
 - The homepage no longer requests `media-queries.css`, `themify.script.js`, or
   `wp-emoji-release.min.js`. Those files are not in this export. The emoji
   probe also ran a canvas test on every view before asking for the missing
@@ -90,5 +94,5 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Notes
 
-- The Home and Contact sections keep their background photographs. Both already
-  sat on black with a dark overlay, so only their colours were in scope.
+- The Home and Contact sections keep their background photographs. A later fix
+  gives their declared cover overlays a box so the dim actually paints.
