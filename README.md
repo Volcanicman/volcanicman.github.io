@@ -4,6 +4,18 @@
 This site can load without a server! Clone this repository to your computer &
 just open the [index file](index.html) in a web browser!
 
+## Smoke tests
+
+The homepage smoke tests need Node 18 or newer. They serve this folder at
+`http://127.0.0.1:4173` for the test run. That does not replace opening
+`index.html` directly.
+
+```
+npm install
+npx playwright install chromium
+npm test
+```
+
 ## Section Text Modification
 Changes to text in each website section can be made by modifying & saving template files.
 These files are dynamically loaded into the [index file](index.html) via JavaScript.

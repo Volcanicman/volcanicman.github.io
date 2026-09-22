@@ -1,0 +1,39 @@
+scenarios:
+  - scenario: Homepage responds and shows the nav
+    steps:
+      - at: /
+        code: 200
+      - element: '#main-nav'
+        contains:
+          - About
+          - Video
+          - Contact
+          - Donate
+          - Subscribe
+
+  - scenario: Section copy, contact fields, and the donate form render
+    steps:
+      - at: /
+        code: 200
+      - element: '#home'
+        contains: Releasing the Kingdom of Heaven Upon the Earth
+      - element: '#about'
+        contains: About the Founder
+      - element: '#about img'
+        count: 1
+      - element: '#contact'
+        contains: Thank you for your interest
+      - element: 'form.builder-contact'
+        count: 1
+      - element: "input[name='contact-name']"
+        count: 1
+      - element: "textarea[name='contact-message']"
+        count: 1
+      - element: "button[type='submit']"
+        count: 1
+      - element: '#donate'
+        contains: 501c3
+      - element: "#donate form[action*='paypal.com']"
+        count: 1
+      - element: '#subscribe2'
+        contains: Sermons

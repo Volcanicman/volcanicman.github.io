@@ -28,6 +28,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Added
 
+- `npm test` smoke-checks the homepage with Playwright and smky: the document
+  title, the five nav labels, Home / About / Contact / Donate / Sermons copy,
+  the contact fields, and the PayPal form. It serves this folder at
+  `http://127.0.0.1:4173` for the run. Opening `index.html` directly is unchanged.
 - A **Spiritual Maintenance** entry in the Subscribe section: the book cover plus
   a link to its Amazon listing. Defined in `templates/subscribe5.md.js`, with the
   cover at `graphics/Spiritual Maintenance book by Aaron Brewer.png`. The

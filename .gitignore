@@ -6,3 +6,8 @@
 
 # Anchor local state (worktrees, caches) — never commit
 var/
+
+node_modules/
+test-results/
+playwright-report/
+blob-report/

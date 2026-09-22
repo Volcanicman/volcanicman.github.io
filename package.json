@@ -1,0 +1,12 @@
+{
+  "name": "website-volcanic-intl",
+  "private": true,
+  "description": "Static site for Volcanic International",
+  "scripts": {
+    "test": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.49.1",
+    "smky": "git+https://github.com/carefreeinv/smky.git#2f2180c8728e02bd5058ec4cd9b1235bb5d9e6cb"
+  }
+}
