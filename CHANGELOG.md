@@ -32,7 +32,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   a link to its Amazon listing. Defined in `templates/subscribe5.md.js`, with the
   cover at `graphics/Spiritual Maintenance book by Aaron Brewer.png`. The
   filename is deliberately descriptive because `raster()` uses its argument as
-  both the image path and the `alt` text.
+  both the image path and the `alt` text. **The cover image itself is a link** to
+  the same listing, so readers can click the book as well as the Amazon icon.
 - A **Prayer Tracks** entry in the Subscribe section, linking to Aaron Brewer's
   artist pages on Spotify and Apple Music. Defined in
   `templates/subscribe4.md.js`; it mounts on a new `#subscribe4` div in a second
