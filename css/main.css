@@ -64,16 +64,29 @@
 	background: var(--home-bg-overlay);
 }
 
-@media screen and (max-width: 480px) {/* .themify_builder_7_row.module_row_0 Style */
-/* On phones the nav wraps to two or three rows, so its height is not fixed. Keep it
-   in flow (the theme makes it absolute) and the Home row starts below it instead of under it. */
-body.transparent-header.fixed-header.page-loaded #headerwrap {
-	position: relative;
+/* .themify_builder_7_row.module_row_0 Style */
+/* The nav is absolute over the top of the Home photo (the theme's transparent header) and
+   wraps onto more rows as the screen narrows, so its height steps with the viewport width.
+   Start the Home content below it. Measured header height: 195px from 661 to 760px wide,
+   173px from 380 to 660px, 221px from 300 to 379px. Below 300px it wraps further and would
+   need a larger value. */
+@media screen and (max-width: 760px) {
+:root {
+	--header-height: 195px;
 }
 .themify_builder_7_row.module_row_0.module_row {
-	padding-top : 8%
+	padding-top : calc(var(--header-height) + 1.5rem)
 }
-
+}
+@media screen and (max-width: 660px) {
+:root {
+	--header-height: 173px;
+}
+}
+@media screen and (max-width: 379px) {
+:root {
+	--header-height: 221px;
+}
 }
 .themify_builder .text-7-0-0-2.module-text { column-count: 1;  } 
 /* .themify_builder_7_row.module_row_1 Style */

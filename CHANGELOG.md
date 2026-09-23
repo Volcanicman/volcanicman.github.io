@@ -60,12 +60,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   `--mobile-gutter` (1.5rem), inside those rows; backgrounds and the Video embed
   stay full width. On phones the About section uses the same gutter instead of its
   own 6%. Wider screens are unchanged.
-- On phones (480px wide and under) the navigation no longer covers the Home
-  section. The theme laid the nav over the top of the Home photo, and on a narrow
-  screen its wrapped rows hid "Releasing the Kingdom of Heaven Upon the Earth".
-  `css/main.css` now keeps the nav in the page flow at that width, so the Home
-  photo and heading start below it, and trims the Home row's top padding from 29%
-  to 8%. Wider screens are unchanged.
+- On phones and small tablets (760px wide and under) the navigation no longer covers
+  the Home heading, "Releasing the Kingdom of Heaven Upon the Earth". The nav sits over
+  the top of the Home photo and wraps onto more rows as the screen narrows, so on a
+  narrow screen it hid the heading. `css/main.css` now starts the Home content below the
+  nav, using `--header-height` (221px up to 379px wide, 173px up to 660px, 195px up to
+  760px), replacing the old percentage padding. The photo still runs from the top of the
+  page. Wider screens are unchanged.
 - The Video section embeds the Vimeo player again, reverting the poster-and-link
   stand-in. `templates/video.md.js` holds the `<iframe>` for
   `https://player.vimeo.com/video/212780263`, and the poster-specific
