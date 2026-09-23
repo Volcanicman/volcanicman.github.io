@@ -1,3 +1,8 @@
 :root {
     --home-bg-image: url("../wp-content/uploads/2024/Banner-cropped.jpg");
+    /* The subject's head is at the top-centre of the photo. */
+    --home-bg-focus-x: 50%;
+    --home-bg-focus-y: 0%;
+    /* Height of the header that overlays the top of Home (64px fixed bar under 800px, see main.css). */
+    --home-header-clear: 141px;
 }

@@ -39,8 +39,16 @@
 	background-color: black;
 	text-align: center;
 	color: var(--home-text-color);
-	padding-top : 25%;
+	padding-top : calc(25% - var(--home-header-clear));
 	padding-bottom : 5%;
+	/* The header overlays the top of Home. A transparent border as tall as the header moves the
+	   image's positioning area (padding box) below it, so `cover` sizes and places the image in the
+	   visible part of the row and the photo's subject (head at x 50%, y 24-37%) is never under the
+	   header. The border area shows the black background-color. */
+	border-top: var(--home-header-clear) solid transparent;
+	background-repeat: no-repeat;
+	background-position: var(--home-bg-focus-x) var(--home-bg-focus-y);
+	background-size: cover;
 }
 .themify_builder_7_row.module_row_0.module_row h1 {
 	color: #ffffff
@@ -71,6 +79,7 @@
 @media screen and (max-width: 799px) {
 :root {
 	--header-height: 64px;
+	--home-header-clear: var(--header-height);
 }
 html {
 	scroll-padding-top: var(--header-height);
@@ -181,7 +190,7 @@ body.transparent-header.fixed-header #headerwrap {
 	text-align: left;
 }
 .themify_builder_7_row.module_row_0.module_row {
-	padding-top : calc(var(--header-height) + 1.5rem)
+	padding-top : 1.5rem
 }
 }
 .themify_builder .text-7-0-0-2.module-text { column-count: 1;  } 
