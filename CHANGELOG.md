@@ -53,6 +53,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Fixed
 
+- Text in the Home, Contact, Donate and Subscribe sections no longer touches the
+  edges of the screen. Below the 1160px content width the builder ran those rows
+  edge to edge, so on phones (and down to about 1180px wide) copy, form fields and
+  images sat 0-10px from the viewport. `css/main.css` now adds a side gutter,
+  `--mobile-gutter` (1.5rem), inside those rows; backgrounds and the Video embed
+  stay full width. On phones the About section uses the same gutter instead of its
+  own 6%. Wider screens are unchanged.
 - The Video section embeds the Vimeo player again, reverting the poster-and-link
   stand-in. `templates/video.md.js` holds the `<iframe>` for
   `https://player.vimeo.com/video/212780263`, and the poster-specific

@@ -1,5 +1,22 @@
 /* Begin main CSS Styling. Best to leave everything below as-is. */
 
+/* Side gutter for text. Below the 1160px content width the builder runs each row's
+   content edge to edge, so text touched the viewport. Applied to the text sections
+   only: the Video row stays full-bleed and row backgrounds are untouched. */
+:root {
+	--mobile-gutter: 1.5rem;
+}
+@media screen and (max-width: 1200px) {
+	.themify_builder_7_row.module_row_0 .row_inner,
+	.tb_section-contact .row_inner,
+	.tb_section-donate .row_inner,
+	.tb_section-subscribe .row_inner {
+		box-sizing: border-box;
+		padding-left: var(--mobile-gutter);
+		padding-right: var(--mobile-gutter);
+	}
+}
+
 /* Cover divs are empty, so they collapse and their background never shows.
    Donate and Subscribe covers have no background and stay invisible. */
 .themify_builder_row {
@@ -66,6 +83,13 @@
 
 }
 .themify_builder .text-7-1-0-1.module-text { text-align: var(--text-align); column-count: 1; padding-right: 6%; padding-left: 6%; margin-bottom: 100px;  }
+/* About keeps its 6% on wide screens; phones get the shared gutter. */
+@media screen and (max-width: 480px) {
+	.themify_builder .text-7-1-0-1.module-text {
+		padding-left: var(--mobile-gutter);
+		padding-right: var(--mobile-gutter);
+	}
+}
 /*@media screen and (max-width: 480px) {!* .themify_builder_7_row.module_row_2 Style *!*/
 /*.themify_builder_7_row.module_row_2.module_row {*/
 /*	padding-top : 12%*/
