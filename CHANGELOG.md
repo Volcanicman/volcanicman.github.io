@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Changed
 
+- The Contact section no longer shows the volcano photograph. It is now plain black
+  like the other sections, set by a new `--contact-bg-color` in `css/colors.css`.
+  The `--contact-bg-image` variable and the 58% dim over that photo are removed.
+  The Home section keeps its photograph.
 - Every homepage section now renders on a black background. The About and
   Subscribe sections changed from grey (`rgb(174, 174, 174)`) and brown
   (`rgb(86, 67, 67)`); the Video section, which previously had no background of

@@ -117,9 +117,7 @@
 .themify_builder .text-7-2-0-1.module-text { text-align: var(--text-align); column-count: 1;  }
 /* .themify_builder_7_row.module_row_3 Style */
 .themify_builder_7_row.module_row_3.module_row {
-	background-image: var(--contact-bg-image);
-	background-color: #000000;
-	background-color: rgba(0,0,0, 0.61);
+	background-color: var(--contact-bg-color);
 	color: #ffffff;
 	padding-top : 6%;
 	padding-bottom : 6%
@@ -144,9 +142,6 @@
 }
 .themify_builder_7_row.module_row_3.module_row h6 {
 	color: #ffffff
-}
-.themify_builder_7_row.module_row_3.module_row>.builder_row_cover {
-	background:rgba(0,0,0, 0.58)
 }
 
 @media screen and (max-width: 480px) {/* .themify_builder_7_row.module_row_3 Style */
