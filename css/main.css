@@ -64,28 +64,124 @@
 	background: var(--home-bg-overlay);
 }
 
-/* .themify_builder_7_row.module_row_0 Style */
-/* The nav is absolute over the top of the Home photo (the theme's transparent header) and
-   wraps onto more rows as the screen narrows, so its height steps with the viewport width.
-   Start the Home content below it. Measured header height: 195px from 661 to 760px wide,
-   173px from 380 to 660px, 221px from 300 to 379px. Below 300px it wraps further and would
-   need a larger value. */
-@media screen and (max-width: 760px) {
+/* Header below 800px: a bar fixed to the top of the viewport (logo on the left, hamburger on the
+   right) with the menu items in a panel that slides in from the right. The theme's own mobile
+   header CSS (media-queries.css) and script (themify.script.js) are not part of this site, so this
+   block does that job. 800px and up keeps the theme's transparent inline nav. */
+@media screen and (max-width: 799px) {
 :root {
-	--header-height: 195px;
+	--header-height: 64px;
+}
+html {
+	scroll-padding-top: var(--header-height);
+}
+/* Same weight as the theme's `body.fixed-header.page-loaded #headerwrap` (absolute), later in the
+   cascade, and it also beats `.transparent-header #headerwrap` before the load event adds page-loaded. */
+body.transparent-header.fixed-header #headerwrap {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: var(--header-height);
+	background: var(--header-bg-color);
+}
+#headerwrap #header {
+	padding: 0;
+	min-height: 0;
+}
+#headerwrap .header-icons {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	box-sizing: border-box;
+	height: 100%;
+	padding: 0 var(--mobile-gutter);
+}
+#mobile-logo img {
+	display: block;
+	width: 150px;
+	height: auto;
+}
+/* 44px tap target, three bars drawn with gradients (the theme draws them with borders in a 20x14 box) */
+#headerwrap #menu-icon {
+	display: block;
+	width: 44px;
+	height: 44px;
+	border: 0;
+	overflow: visible;
+	background:
+		linear-gradient(currentColor, currentColor) 10px 14px / 24px 2px no-repeat,
+		linear-gradient(currentColor, currentColor) 10px 21px / 24px 2px no-repeat,
+		linear-gradient(currentColor, currentColor) 10px 28px / 24px 2px no-repeat;
+}
+#headerwrap #menu-icon:before,
+#headerwrap #menu-icon:after {
+	display: none;
+}
+#mobile-menu {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 1000;
+	box-sizing: border-box;
+	width: min(80vw, 320px);
+	padding-top: var(--header-height);
+	overflow-y: auto;
+	background: var(--header-bg-color);
+	transform: translateX(100%);
+	visibility: hidden;
+	transition: transform .25s ease, visibility 0s .25s;
+}
+#mobile-menu.sidemenu-on {
+	transform: none;
+	visibility: visible;
+	transition: transform .25s ease;
+}
+#mobile-menu #menu-icon-close {
+	display: block;
+	position: absolute;
+	top: calc((var(--header-height) - 44px) / 2);
+	right: var(--mobile-gutter);
+	width: 44px;
+	height: 44px;
+	color: #fff;
+}
+#mobile-menu #menu-icon-close:before,
+#mobile-menu #menu-icon-close:after {
+	content: '';
+	position: absolute;
+	top: 21px;
+	left: 10px;
+	width: 24px;
+	height: 2px;
+	background: currentColor;
+	transform: rotate(45deg);
+}
+#mobile-menu #menu-icon-close:after {
+	transform: rotate(-45deg);
+}
+#mobile-menu #main-nav {
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+#mobile-menu #main-nav li {
+	display: block;
+	float: none;
+	width: 100%;
+	margin: 0;
+}
+#mobile-menu #main-nav .themify-logo-menu-item {
+	display: none;
+}
+#mobile-menu #main-nav li a {
+	display: block;
+	padding: 1rem var(--mobile-gutter);
+	text-align: left;
 }
 .themify_builder_7_row.module_row_0.module_row {
 	padding-top : calc(var(--header-height) + 1.5rem)
-}
-}
-@media screen and (max-width: 660px) {
-:root {
-	--header-height: 173px;
-}
-}
-@media screen and (max-width: 379px) {
-:root {
-	--header-height: 221px;
 }
 }
 .themify_builder .text-7-0-0-2.module-text { column-count: 1;  } 

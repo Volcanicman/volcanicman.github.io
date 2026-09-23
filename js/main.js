@@ -29,6 +29,27 @@ jQuery(window).ready(function() {
     jQuery(window).on('scroll', markScrolled);
     markScrolled();
 
+    // Below 800px the menu items live in a panel opened by the hamburger. The theme script that
+    // wired it up is not part of this site, so use the theme's side menu plugin directly.
+    const menuIcon = jQuery('#menu-icon');
+    menuIcon.themifySideMenu({ close: '#menu-icon-close' });
+    jQuery('#main-nav a').on('click', function() {
+        menuIcon.themifySideMenu('hide');
+    });
+    // The theme's anchor scrolling stops `scrollOffset` pixels above the section. Below 800px the
+    // fixed bar covers the top of the viewport, so stop below it instead of under it.
+    const desktopScrollOffset = tbScrollHighlight.scrollOffset;
+    function syncMenu() {
+        if (window.innerWidth >= 800) {
+            menuIcon.themifySideMenu('hide');
+            tbScrollHighlight.scrollOffset = desktopScrollOffset;
+        } else {
+            tbScrollHighlight.scrollOffset = jQuery('#headerwrap').outerHeight();
+        }
+    }
+    jQuery(window).on('resize', syncMenu);
+    syncMenu();
+
     // Load template functions.
     const functionKeys = Object.keys(functions);
     functionKeys.forEach(function(func) {

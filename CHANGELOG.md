@@ -37,9 +37,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - The header now has a scrolled state. `js/main.js` adds `fixed-header-on` to `<body>`
   once the page is scrolled more than 50px and removes it at the top. Nothing applied
   that class before, because the theme script that did is not part of this site, so the
-  header rules keyed on it never ran. They now do: past 50px the logo and nav sit about
-  10-12px lower (`css/main.css` adds 10px under the logo, and the theme's split-menu
-  rules add padding above it). The logo stays 200px wide.
+  header rules keyed on it never ran. They now do: at 800px and up, past 50px the logo and
+  nav sit about 10-12px lower (`css/main.css` adds 10px under the logo, and the theme's
+  split-menu rules add padding above it). The logo stays 200px wide. Below 800px the
+  fixed bar does not move.
 - `npm start` serves this folder with Node (`scripts/serve.js`) at
   `http://127.0.0.1:3000`. No extra package. `PORT` and `HOST` override the
   address. Text and image responses send `Cache-Control: no-cache` plus an
@@ -72,13 +73,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   `--mobile-gutter` (1.5rem), inside those rows; backgrounds and the Video embed
   stay full width. On phones the About section uses the same gutter instead of its
   own 6%. Wider screens are unchanged.
-- On phones and small tablets (760px wide and under) the navigation no longer covers
-  the Home heading, "Releasing the Kingdom of Heaven Upon the Earth". The nav sits over
-  the top of the Home photo and wraps onto more rows as the screen narrows, so on a
-  narrow screen it hid the heading. `css/main.css` now starts the Home content below the
-  nav, using `--header-height` (221px up to 379px wide, 173px up to 660px, 195px up to
-  760px), replacing the old percentage padding. The photo still runs from the top of the
-  page. Wider screens are unchanged.
+- Below 800px wide the header is a bar fixed to the top of the screen, with the logo on
+  the left and a hamburger button on the right, instead of the full nav sitting over the
+  top of the Home photo (where it wrapped onto several rows and covered the heading,
+  "Releasing the Kingdom of Heaven Upon the Earth"). The hamburger opens a panel that
+  slides in from the right with About, Video, Contact, Donate and Subscribe; the close
+  button, or tapping a link, closes it. The hamburger and its panel never worked here
+  because the theme files that provided them (`media-queries.css`, `themify.script.js`)
+  are not part of this site. `css/main.css` now styles them, `js/main.js` wires the
+  theme's side menu plugin, and `index.html` gains a small logo link in the bar. Menu links
+  scroll to the section just below the bar. The Home content starts below the bar using
+  `--header-height`, and `css/colors.css` has a new `--header-bg-color`. At 800px and up
+  the header is unchanged.
 - The Video section embeds the Vimeo player again, reverting the poster-and-link
   stand-in. `templates/video.md.js` holds the `<iframe>` for
   `https://player.vimeo.com/video/212780263`, and the poster-specific
