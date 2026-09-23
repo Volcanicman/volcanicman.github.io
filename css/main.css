@@ -193,8 +193,19 @@ body.transparent-header.fixed-header #headerwrap {
 	padding: 1rem var(--mobile-gutter);
 	text-align: left;
 }
+}
+/* Below 1000px the Home row is short, so the tagline used to sit over the speaker's face. Start it
+   below the head instead, along the bottom of the section. The head's lower edge is 37% of the
+   photo's height from the photo's top, and the photo is as wide as the row, so about 17.8vw
+   (37% of 1266/2634 of the width) below the top of the padding box, which is where the padding
+   starts. --home-tagline-gap keeps the text clear of the chin. From 1000px the row is tall enough
+   and keeps the padding set above. */
+:root {
+	--home-tagline-gap: 1.25rem;
+}
+@media screen and (max-width: 999px) {
 .themify_builder_7_row.module_row_0.module_row {
-	padding-top : max(0px, calc(var(--home-header-clear) + 1.5rem - var(--home-photo-inset)))
+	padding-top : calc(17.8vw + var(--home-tagline-gap));
 }
 }
 .themify_builder .text-7-0-0-2.module-text { column-count: 1;  } 

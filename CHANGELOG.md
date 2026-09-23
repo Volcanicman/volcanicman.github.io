@@ -66,6 +66,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Fixed
 
+- Below 1000px wide the "Releasing the Kingdom of Heaven Upon the Earth" tagline no longer
+  sits over the speaker's face in the Home section. It now starts below the head, along the
+  bottom of the section (`--home-tagline-gap` in `css/main.css`), which makes the Home
+  section a little taller on phones. From 1000px it is unchanged.
 - The header no longer covers the person's head in the Home banner photo. The Home
   section now starts its photo just far enough below the header (a transparent top
   border, `--home-photo-inset` in `css/main.css`) that the head clears the header by
