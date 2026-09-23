@@ -65,8 +65,13 @@
 }
 
 @media screen and (max-width: 480px) {/* .themify_builder_7_row.module_row_0 Style */
+/* On phones the nav wraps to two or three rows, so its height is not fixed. Keep it
+   in flow (the theme makes it absolute) and the Home row starts below it instead of under it. */
+body.transparent-header.fixed-header.page-loaded #headerwrap {
+	position: relative;
+}
 .themify_builder_7_row.module_row_0.module_row {
-	padding-top : 29%
+	padding-top : 8%
 }
 
 }
