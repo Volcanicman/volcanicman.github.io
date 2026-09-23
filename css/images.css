@@ -5,4 +5,6 @@
     --home-bg-focus-y: 0%;
     /* Height of the header that overlays the top of Home (64px fixed bar under 800px, see main.css). */
     --home-header-clear: 141px;
+    /* Gap kept between the bottom of the header and the top of the head. */
+    --home-head-clearance: 24px;
 }

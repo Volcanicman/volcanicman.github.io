@@ -67,10 +67,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ### Fixed
 
 - The header no longer covers the person's head in the Home banner photo. The Home
-  section now starts its photo below the header (a transparent top border, sized by
-  `--home-header-clear`), so the subject stays clear of the nav at every width. The photo's
-  focal point is set by `--home-bg-focus-x` / `--home-bg-focus-y` in `css/images.css`.
-  On wide screens this leaves a black band, the height of the header, above the photo.
+  section now starts its photo just far enough below the header (a transparent top
+  border, `--home-photo-inset` in `css/main.css`) that the head clears the header by
+  `--home-head-clearance` (24px, `css/images.css`), so the head sits as high as is safe
+  at every width. On screens about 1600px and wider the photo starts at the top as
+  before. The header heights are `--home-header-clear` (141px, 64px under 800px) and the
+  photo's focal point is `--home-bg-focus-x` / `--home-bg-focus-y`.
 - Text in the Home, Contact, Donate and Subscribe sections no longer touches the
   edges of the screen. Below the 1160px content width the builder ran those rows
   edge to edge, so on phones (and down to about 1180px wide) copy, form fields and

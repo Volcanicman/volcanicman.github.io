@@ -39,13 +39,17 @@
 	background-color: black;
 	text-align: center;
 	color: var(--home-text-color);
-	padding-top : calc(25% - var(--home-header-clear));
+	/* The header overlays the top of Home, and the photo's subject has his head at x 50%, y 24-37% of
+	   the photo, i.e. about 11.5vw below the photo's top edge when it spans the width. A transparent
+	   border moves the image's positioning area (padding box) down just far enough that the head
+	   clears the header by --home-head-clearance, and no further: the head sits as high as is safe,
+	   and on wide screens the inset is 0 so the photo starts at the top. `cover` then sizes and
+	   places the image inside the padding box; the border area shows the black background-color. */
+	--home-photo-inset: max(0px, calc(var(--home-header-clear) + var(--home-head-clearance) - 11.5vw));
+	border-top: var(--home-photo-inset) solid transparent;
+	/* Content stays where it was: 25% of the width from the top of the row on wide screens. */
+	padding-top : max(0px, calc(25% - var(--home-photo-inset)));
 	padding-bottom : 5%;
-	/* The header overlays the top of Home. A transparent border as tall as the header moves the
-	   image's positioning area (padding box) below it, so `cover` sizes and places the image in the
-	   visible part of the row and the photo's subject (head at x 50%, y 24-37%) is never under the
-	   header. The border area shows the black background-color. */
-	border-top: var(--home-header-clear) solid transparent;
 	background-repeat: no-repeat;
 	background-position: var(--home-bg-focus-x) var(--home-bg-focus-y);
 	background-size: cover;
@@ -190,7 +194,7 @@ body.transparent-header.fixed-header #headerwrap {
 	text-align: left;
 }
 .themify_builder_7_row.module_row_0.module_row {
-	padding-top : 1.5rem
+	padding-top : max(0px, calc(var(--home-header-clear) + 1.5rem - var(--home-photo-inset)))
 }
 }
 .themify_builder .text-7-0-0-2.module-text { column-count: 1;  } 
