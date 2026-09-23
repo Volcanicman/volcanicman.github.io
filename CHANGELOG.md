@@ -13,6 +13,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   The `--contact-bg-image` variable and the 58% dim over that photo are removed.
   The Home section keeps its photograph.
 - The Subscribe section's book entry now shows the "Spiritual Maintenance" title above the cover image, matching the other columns that open with a title.
+- The Subscribe section's Prayer Tracks entry now carries a short description under its Spotify and Apple links, like the Sermons and Podcast entries.
 - Every homepage section now renders on a black background. The About and
   Subscribe sections changed from grey (`rgb(174, 174, 174)`) and brown
   (`rgb(86, 67, 67)`); the Video section, which previously had no background of
