@@ -32,6 +32,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Added
 
+- The header now has a scrolled state. `js/main.js` adds `fixed-header-on` to `<body>`
+  once the page is scrolled more than 50px and removes it at the top. Nothing applied
+  that class before, because the theme script that did is not part of this site, so the
+  header rules keyed on it never ran. They now do: past 50px the logo and nav sit about
+  10-12px lower (`css/main.css` adds 10px under the logo, and the theme's split-menu
+  rules add padding above it). The logo stays 200px wide.
 - `npm start` serves this folder with Node (`scripts/serve.js`) at
   `http://127.0.0.1:3000`. No extra package. `PORT` and `HOST` override the
   address. Text and image responses send `Cache-Control: no-cache` plus an

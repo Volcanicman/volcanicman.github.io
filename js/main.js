@@ -19,6 +19,16 @@ function md(markup) {
 
 jQuery(window).ready(function() {
 
+    // The theme's scroll script is not part of this site, so nothing adds
+    // `fixed-header-on` to the body. The header rules keyed on it (in css/main.css and
+    // the theme) only apply once the page has scrolled away from the top.
+    const scrolledPastTop = 50;
+    function markScrolled() {
+        jQuery('body').toggleClass('fixed-header-on', jQuery(window).scrollTop() > scrolledPastTop);
+    }
+    jQuery(window).on('scroll', markScrolled);
+    markScrolled();
+
     // Load template functions.
     const functionKeys = Object.keys(functions);
     functionKeys.forEach(function(func) {
