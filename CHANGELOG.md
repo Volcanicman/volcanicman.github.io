@@ -70,7 +70,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   section now starts its photo just far enough below the header (a transparent top
   border, `--home-photo-inset` in `css/main.css`) that the head clears the header by
   `--home-head-clearance` (24px, `css/images.css`), so the head sits as high as is safe
-  at every width. On screens about 1600px and wider the photo starts at the top as
+  at every width. On screens about 1435px and wider the photo starts at the top as
   before. The header heights are `--home-header-clear` (141px, 64px under 800px) and the
   photo's focal point is `--home-bg-focus-x` / `--home-bg-focus-y`.
 - Text in the Home, Contact, Donate and Subscribe sections no longer touches the
