@@ -53,9 +53,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Fixed
 
-- The Video section no longer embeds the Vimeo player, which was showing a
-  player error instead of the film. It now shows the film's poster. The image
-  links to `https://vimeo.com/212780263` and opens in a new tab.
+- The Video section embeds the Vimeo player again, reverting the poster-and-link
+  stand-in. `templates/video.md.js` holds the `<iframe>` for
+  `https://player.vimeo.com/video/212780263`, and the poster-specific
+  `.tb_section-video .video-wrap` rules are removed so the theme's 16:9 box
+  applies again.
 - The page head now has a canonical URL on `www.volcanicinternational.org`, a
   description taken from the About copy, and Open Graph / Twitter card tags
   pointing at `graphics/share-card.jpg` (1200×630). The empty canonical and

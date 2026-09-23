@@ -21,12 +21,6 @@ scenarios:
         contains: About the Founder
       - element: '#about img'
         count: 1
-      - element: '#video a[href="https://vimeo.com/212780263"]'
-        count: 1
-      - element: '#video img'
-        count: 1
-      - element: '#video iframe'
-        count: 0
       - element: '#contact'
         contains: Thank you for your interest
       - element: 'form.builder-contact'

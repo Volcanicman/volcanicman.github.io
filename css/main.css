@@ -180,28 +180,6 @@ body,
 	color: var(--video-text-color);
 }
 
-/* The theme sizes .video-wrap as a 0-height 16:9 box for an absolutely
-   positioned iframe. The section now holds a poster image in normal flow,
-   which that box clips. */
-.tb_section-video .video-wrap {
-	height: auto;
-	padding-bottom: 0;
-	overflow: visible;
-}
-.tb_section-video .video-wrap p {
-	margin: 0;
-}
-.tb_section-video .video-wrap a {
-	display: block;
-}
-.tb_section-video .video-wrap img {
-	display: block;
-	width: 100%;
-	height: auto;
-	aspect-ratio: 16 / 9;
-	object-fit: cover;
-}
-
 .tb_section-about {
 	background: var(--about-bg-color);
 	color: var(--about-text-color);
